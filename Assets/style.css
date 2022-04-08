@@ -11,11 +11,12 @@ textarea {
   color: #000000;
   border-left: 1px solid black;
   padding: 10px;
+  border-radius: 15px;
 }
 
 .jumbotron {
   text-align: center;
-  background-color: transparent;
+  background-color: #06aed5;
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
@@ -25,7 +26,7 @@ textarea {
   white-space: pre-wrap;
 }
 
-.time-block {
+.timeslots {
   text-align: center;
   border-radius: 15px;
 }
@@ -58,9 +59,10 @@ textarea {
 }
 
 .saveBtn {
-  border-left: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border: 1px solid black;
+  /*border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;*/
+  border-radius: 15px;
   background-color: #06aed5;
   color: white;
 }
@@ -68,4 +70,10 @@ textarea {
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+}
+
+.timeslots {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
 }
