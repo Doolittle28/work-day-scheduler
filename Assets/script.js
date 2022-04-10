@@ -1,3 +1,4 @@
+// variables for value on time to 
 var time9 = (parseInt($('#9').attr('data-value')));
 var time10 = (parseInt($('#10').attr('data-value')));
 var time11 = (parseInt($('#11').attr('data-value')));
@@ -12,126 +13,121 @@ var time17 = (parseInt($('#17').attr('data-value')));
 var date = moment().format("dddd, MMMM Do YYYY");
 $("#currentDay").html(date);
 
-//var time = $('.row').children('section'); //loop through this
-
 // Event listender for saving activities in timeslots to local storage
 $('.saveBtn').on('click', function () {
 
-    var activities = $('.acts').val();
-
-
-    localStorage.setItem(activities, time9);
-    localStorage.setItem(activities, time10);
-    localStorage.setItem(activities, time11);
-    localStorage.setItem(activities, time12);
-    localStorage.setItem(activities, time13);
-    localStorage.setItem(activities, time14);
-    localStorage.setItem(activities, time15);
-    localStorage.setItem(activities, time16);
-    localStorage.setItem(activities, time17);
+    localStorage.setItem("time9", $("#input9").val());
+    localStorage.setItem("time10", $("#input10").val());
+    localStorage.setItem("time11", $("#input11").val());
+    localStorage.setItem("time12", $("#input12").val());
+    localStorage.setItem("time13", $("#input13").val());
+    localStorage.setItem("time14", $("#input14").val());
+    localStorage.setItem("time15", $("#input15").val());
+    localStorage.setItem("time16", $("#input16").val());
+    localStorage.setItem("time17", $("#input17").val());
 });
 
-// Changes color of timeslot container depending on time
+// Changes color of timeslot container depending on current time vs timeslot
 function color() {
     var currentTime = moment().hour(); // variable to pull current time from
 
     // 9am timeslot
     if (time9 > currentTime) {
-        $('.acts').addClass('future')
+        $('.acts9').addClass('future')
     }
     else if (time9 === currentTime) {
-        $('.acts').addClass('present')
+        $('.acts9').addClass('present')
     }
     else {
-        $('.acts').addClass('past')
+        $('.acts9').addClass('past')
     };
 
     // 10am timeslot
     if (time10 > currentTime) {
-        $('.acts').addClass('future')
+        $('.acts10').addClass('future')
     }
     else if (time10 === currentTime) {
-        $('.acts').addClass('present')
+        $('.acts10').addClass('present')
     }
     else {
-        $('.acts').addClass('past')
+        $('.acts10').addClass('past')
     };
 
     // 11am timeslot
     if (time11 > currentTime) {
-        $('.acts').addClass('future')
+        $('.acts11').addClass('future')
     }
     else if (time11 === currentTime) {
-        $('.acts').addClass('present')
+        $('.acts11').addClass('present')
     }
     else {
-        $('.acts').addClass('past')
+        $('.acts11').addClass('past')
     };
 
     // 12pm timeslot
     if (time12 > currentTime) {
-        $('.acts').addClass('future')
+        $('.acts12').addClass('future')
     }
     else if (time12 === currentTime) {
-        $('.acts').addClass('present')
+        $('.acts12').addClass('present')
     }
     else {
-        $('.acts').addClass('past')
+        $('.acts12').addClass('past')
     };
 
     // 1pm timeslot
     if (time13 > currentTime) {
-        $('.acts').addClass('future')
+        $('.acts13').addClass('future')
     }
     else if (time13 === currentTime) {
-        $('.acts').addClass('present')
+        $('.acts13').addClass('present')
     }
     else {
-        $('.acts').addClass('past')
+        $('.acts13').addClass('past')
     };
 
     // 2pm timeslot
     if (time14 > currentTime) {
-        $('.acts').addClass('future')
+        $('.acts14').addClass('future')
     }
     else if (time14 === currentTime) {
-        $('.acts').addClass('present')
+        $('.acts14').addClass('present')
     }
     else {
-        $('.acts').addClass('past')
+        $('.acts14').addClass('past')
     };
 
     // 3pm timeslot
     if (time15 > currentTime) {
-        $('.acts').addClass('future')
+        $('.acts15').addClass('future')
     }
     else if (time15 === currentTime) {
-        $('.acts').addClass('present')
+        $('.acts15').addClass('present')
     }
     else {
-        $('.acts').addClass('past')
+        $('.acts15').addClass('past')
     };
 
     // 4pm timeslot
     if (time16 > currentTime) {
-        $('.acts').addClass('future')
+        $('.acts16').addClass('future')
     }
     else if (time16 === currentTime) {
-        $('.acts').addClass('present')
+        $('.acts16').addClass('present')
     }
     else {
-        $('.acts').addClass('past')
+        $('.acts16').addClass('past')
     };
 
     // 5pm timeslot
     if (time17 > currentTime) {
-        $('.acts').addClass('future')
+        $('.acts17').addClass('future')
     }
     else if (time17 === currentTime) {
-        $('.acts').addClass('present')
+        $('.acts17').addClass('present')
     }
     else {
-        $('.acts').addClass('past')
+        $('.acts17').addClass('past')
     };
 
 
@@ -140,13 +136,13 @@ function color() {
 
 color(); // Runs color function to color code schedule
 
-// Pulls time and activity from local storage for each timeslot
-$('9 .acts').text((localStorage.getItem('9')));
-$('10 .acts').text((localStorage.getItem('10')));
-$('12 .acts').text((localStorage.getItem('12')));
-$('13 .acts').text((localStorage.getItem('13')));
-$('11 .acts').text((localStorage.getItem('11')));
-$('14 .acts').text((localStorage.getItem('14')));
-$('15 .acts').text((localStorage.getItem('15')));
-$('16 .acts').text((localStorage.getItem('16')));
-$('17 .acts').text((localStorage.getItem('17')));
+// Pulls time and input from local storage for each timeslot
+$("#input9").val(localStorage.getItem("time9"));
+$("#input10").val(localStorage.getItem("time10"));
+$("#input11").val(localStorage.getItem("time11"));
+$("#input12").val(localStorage.getItem("time12"));
+$("#input13").val(localStorage.getItem("time13"));
+$("#input14").val(localStorage.getItem("time14"));
+$("#input15").val(localStorage.getItem("time15"));
+$("#input16").val(localStorage.getItem("time16"));
+$("#input17").val(localStorage.getItem("time17"));
